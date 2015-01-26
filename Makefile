@@ -1,16 +1,11 @@
 manage ?= ./manage.py
 
 test:
-	$(manage) test \
-		--liveserver=localhost:8081-8181 \
-		--nologcapture
+	$(manage) test
 
 test-frontend: static
 	$(manage) test selenium_tests \
 		--liveserver=localhost:8081-8181 \
-		--nologcapture
-test-backend:
-	$(manage) test api contracts \
 		--nologcapture
 
 static:
